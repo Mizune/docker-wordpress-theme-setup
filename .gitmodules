@@ -1,0 +1,3 @@
+[submodule "wp-content/themes/modest_wisteria"]
+	path = wp-content/themes/modest_wisteria
+	url = git@github.com:Mizune/modest_wisteria.git
