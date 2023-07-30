@@ -1,4 +1,4 @@
-=== eid_wp_theme ===
+=== modest_wisteria ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -10,7 +10,7 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called eid_wp_theme.
+A starter theme called modest_wisteria.
 
 == Description ==
 
@@ -26,7 +26,7 @@ Description
 
 = Does this theme support any plugins? =
 
-eid_wp_theme includes support for WooCommerce and for Infinite Scroll in Jetpack.
+modest_wisteria includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

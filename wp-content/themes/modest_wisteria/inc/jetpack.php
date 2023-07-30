@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package eid_wp_theme
+ * @package modest_wisteria
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function eid_wp_theme_jetpack_setup() {
+function modest_wisteria_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'eid_wp_theme_infinite_scroll_render',
+			'render'    => 'modest_wisteria_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function eid_wp_theme_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'eid_wp_theme-style',
+				'stylesheet' => 'modest_wisteria-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,13 +48,13 @@ function eid_wp_theme_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'eid_wp_theme_jetpack_setup' );
+add_action( 'after_setup_theme', 'modest_wisteria_jetpack_setup' );
 
-if ( ! function_exists( 'eid_wp_theme_infinite_scroll_render' ) ) :
+if ( ! function_exists( 'modest_wisteria_infinite_scroll_render' ) ) :
 	/**
 	 * Custom render function for Infinite Scroll.
 	 */
-	function eid_wp_theme_infinite_scroll_render() {
+	function modest_wisteria_infinite_scroll_render() {
 		while ( have_posts() ) {
 			the_post();
 			if ( is_search() ) :

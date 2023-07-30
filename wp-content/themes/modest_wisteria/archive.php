@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package eid_wp_theme
+ * @package modest_wisteria
  */
 
 get_header();

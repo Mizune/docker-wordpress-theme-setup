@@ -1,10 +1,10 @@
 <?php
 /**
- * eid_wp_theme functions and definitions
+ * modest_wisteria functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package eid_wp_theme
+ * @package modest_wisteria
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -19,14 +19,14 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function eid_wp_theme_setup() {
+function modest_wisteria_setup() {
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on eid_wp_theme, use a find and replace
-		* to change 'eid_wp_theme' to the name of your theme in all the template files.
+		* If you're building a theme based on modest_wisteria, use a find and replace
+		* to change 'modest_wisteria' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'eid_wp_theme', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'modest_wisteria', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -49,7 +49,7 @@ function eid_wp_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'eid_wp_theme' ),
+			'menu-1' => esc_html__( 'Primary', 'modest_wisteria' ),
 		)
 	);
 
@@ -74,7 +74,7 @@ function eid_wp_theme_setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'eid_wp_theme_custom_background_args',
+			'modest_wisteria_custom_background_args',
 			array(
 				'default-color' => 'ffffff',
 				'default-image' => '',
@@ -100,7 +100,7 @@ function eid_wp_theme_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'eid_wp_theme_setup' );
+add_action( 'after_setup_theme', 'modest_wisteria_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -109,22 +109,22 @@ add_action( 'after_setup_theme', 'eid_wp_theme_setup' );
  *
  * @global int $content_width
  */
-function eid_wp_theme_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'eid_wp_theme_content_width', 640 );
+function modest_wisteria_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'modest_wisteria_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'eid_wp_theme_content_width', 0 );
+add_action( 'after_setup_theme', 'modest_wisteria_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function eid_wp_theme_widgets_init() {
+function modest_wisteria_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'eid_wp_theme' ),
+			'name'          => esc_html__( 'Sidebar', 'modest_wisteria' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'eid_wp_theme' ),
+			'description'   => esc_html__( 'Add widgets here.', 'modest_wisteria' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -132,22 +132,22 @@ function eid_wp_theme_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'eid_wp_theme_widgets_init' );
+add_action( 'widgets_init', 'modest_wisteria_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function eid_wp_theme_scripts() {
-	wp_enqueue_style( 'eid_wp_theme-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'eid_wp_theme-style', 'rtl', 'replace' );
+function modest_wisteria_scripts() {
+	wp_enqueue_style( 'modest_wisteria-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_style_add_data( 'modest_wisteria-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'eid_wp_theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'modest_wisteria-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'eid_wp_theme_scripts' );
+add_action( 'wp_enqueue_scripts', 'modest_wisteria_scripts' );
 
 /**
  * Implement the Custom Header feature.

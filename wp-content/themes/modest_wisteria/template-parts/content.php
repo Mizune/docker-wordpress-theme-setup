@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package eid_wp_theme
+ * @package modest_wisteria
  */
 
 ?>
@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				eid_wp_theme_posted_on();
-				eid_wp_theme_posted_by();
+				modest_wisteria_posted_on();
+				modest_wisteria_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php eid_wp_theme_post_thumbnail(); ?>
+	<?php modest_wisteria_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -37,7 +37,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'eid_wp_theme' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'modest_wisteria' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -50,7 +50,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'eid_wp_theme' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'modest_wisteria' ),
 				'after'  => '</div>',
 			)
 		);
@@ -58,6 +58,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php eid_wp_theme_entry_footer(); ?>
+		<?php modest_wisteria_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

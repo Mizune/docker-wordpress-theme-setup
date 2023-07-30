@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package eid_wp_theme
+ * @package modest_wisteria
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

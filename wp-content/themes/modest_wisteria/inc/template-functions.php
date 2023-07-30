@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package eid_wp_theme
+ * @package modest_wisteria
  */
 
 /**
@@ -11,7 +11,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function eid_wp_theme_body_classes( $classes ) {
+function modest_wisteria_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -24,14 +24,14 @@ function eid_wp_theme_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'eid_wp_theme_body_classes' );
+add_filter( 'body_class', 'modest_wisteria_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function eid_wp_theme_pingback_header() {
+function modest_wisteria_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
-add_action( 'wp_head', 'eid_wp_theme_pingback_header' );
+add_action( 'wp_head', 'modest_wisteria_pingback_header' );
